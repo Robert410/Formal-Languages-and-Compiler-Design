@@ -1,0 +1,9 @@
+folosibilN n
+notSure => n ? n <= 1:
+    iesi f
+
+folosibilN i
+noStress i ? 2, sqrt(n):
+    notSure => n ? n % i == 0:
+        iesi f
+iesi t

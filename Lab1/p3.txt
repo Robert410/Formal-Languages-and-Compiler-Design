@@ -1,0 +1,13 @@
+folosibilN size
+folosibilN arr<>
+folosibil1 ok => t
+
+create size
+create arr<size>
+
+folosibilN i, count => 0, 0
+noStress i ? 0, arr.length:
+    notSure => ok, arr<i> ? ok == t, arr<i> % 2 == 0:
+        count ++
+
+ecran => "there are " + count + " even numbers"

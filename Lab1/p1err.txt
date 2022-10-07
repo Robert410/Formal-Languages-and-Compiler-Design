@@ -1,0 +1,6 @@
+folosibilN a = 1
+folosibilN b => b = 1
+
+folosibil1 sum => a + b
+
+ecran => sum

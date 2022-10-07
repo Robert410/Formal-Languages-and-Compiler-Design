@@ -1,0 +1,17 @@
+folosibilN a => 2
+folosibilN b => 3
+folosibilN c => 5
+
+folosibilN sum => a + b + c
+
+folosibilN stringOut
+
+folosibil1 ok => f
+
+notSure => sum ? sum > 0 :
+    stringOut => concat ("The sum is " + sum)
+Sure:
+    stringOut => concat ("The sum is negative and it is " + sum)
+
+
+ecran => stringOut
