@@ -1,0 +1,30 @@
+Sintactical rules:
+	program = “stmtlist”
+	stmtlist = stmt;{stmt}
+	stmt = decl | simplestmt | structstmt
+	decl = type identifier
+	type = primarytypes | arraytype
+
+	primarytypes = “int” | “long” | “float” | "double" | "short" | "char"
+	arraytype = primarytipes ”[“ nr “]”
+	
+	cmpstmt = “{“ stmtlist ”}”
+	simplestmt = assignment | outstmt
+	assignment = IDENTIFIER “=” expression 
+	expression = [!] (term | expression operation expression | “(” expression operation expression “)”)
+	operation = “+” | “-” | “*” | “/” | “%” | “^” | "&" | 
+	term = IDENTIFIER | nr | \“ char{char} \“
+
+	outstmt = "printf" "(" identifier ")" ";"
+	
+	structstmt = ifstmt | whilestmt | forstmt | switchstmt | cmpstmt
+	ifstmt = “if” “(“ condition “)” cmpstmt {"elif" “(“ condition “)” stmt} | "else" stmt
+    
+	condition = expression RELATION expression
+
+	whilestmt = “while” condition compstmt 
+	forstmt = “for” “(“ assignment; condition;  “)” stmt
+	switchstmt = "switch" "(" condition ")" casestmt{casestmt} "default" ":" stmtlist 
+	casestmt = "case" ":" stmtlist "break;"
+
+    iostmt ::= "READ" | "WRITE" "(" IDENTIFIER ")"

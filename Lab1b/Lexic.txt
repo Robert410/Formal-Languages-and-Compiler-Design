@@ -1,0 +1,42 @@
+1. Lexic
+    - Alphabet: A-Z, a-z, 0-9, _
+    - Lexic:
+    • operators: +, -, *, /, =>, ++, --, <, <=, >, >=, ==
+    • separators: …, ( ), [ ], space, newline, comma, “”, <>
+    • reserved words: 
+        break - pausa,
+        int, float, double, char, string - folosibilN, 
+        boolean - folosibil1,
+        continue - totAsa,
+        for - noStress, 
+        return - iesi, 
+        print - ecran, 
+        while - repeat, 
+        if - notSure, 
+        else - Sure,
+        elif - nSure,
+        const - aiaE,
+        default - simpleEx,
+        switch - cumVrei,
+        case - alege ,
+        void - maiNimic,
+        read/cin - create
+
+    • identifier = [ “_” ] letter { letter | digit }
+    • letter = “A” | “B” | ... | “Z” | “a” | “b” | … | “z”
+    • digit = “0” | “1” | … | “9”
+    • int_const = “0” | [ “+” | “-” ] nz_digit { digit }
+	• sign = ["+" | "-"]
+    • nz_digit = “1” | “2” | … | “9”
+    • char_const = letter | digit
+    • string_const = “ “ ” { letter | digit | “ ” | “_” } “ ” ”
+    • 2 data types: folosibil1, folosibilN,
+    • number = zero_digit | nz_digit {(zero_digit | digit)}
+    • user-defined type: array type: identifier<number>
+
+
+lexical rules:
+ IDENTIFIER = letter | letter{letter}{digit}
+     letter = "A" | "B" |...| "Z" | "a" | "b" | ... | "z"
+      digit = "0" | "1" |...| "9"
+   RELATION = "<" | "<=" | "==" | "!=" | ">=" | ">" | "&&" | "||" 
