@@ -1,0 +1,9 @@
+I will have 2 main components: Symbol Table and Hash Table
+Hash Table will be custom:
+    - hash: custom hash function for insert
+    - add: add to the array with the key hashed
+    - get: get an element from the array
+    - delete: delete an element from the array
+
+ Symbol table will play like a controller, he will use the hashtable and call the necessary functions from the hasthable
+ main includes some tests and calls to symbol table
