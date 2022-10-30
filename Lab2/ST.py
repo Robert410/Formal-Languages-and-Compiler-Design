@@ -5,8 +5,8 @@ class SymbolTable:
         self.__size = size
         self.__simtable = HashTable(size)
 
-    def addSimTable(self, key, value):
-        return self.__simtable.add(key, value)
+    def addSimTable(self, key):
+        return self.__simtable.add(key)
 
     def hasIdentifier(self, key):
         return self.__simtable.get(key)

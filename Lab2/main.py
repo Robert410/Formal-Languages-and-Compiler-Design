@@ -37,7 +37,7 @@ def assertDelete():
     assert st.hasIdentifier("a") == None
 
 if __name__ == '__main__':
-    assertAdd()
-    assertEdit()
-    assertDelete()
+    # assertAdd()
+    # assertEdit()
+    # assertDelete()
 

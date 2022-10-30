@@ -1,3 +1,5 @@
+For Lab2:
+
 I will have 2 main components: Symbol Table and Hash Table
 Hash Table will be custom:
     - hash: custom hash function for insert
@@ -7,3 +9,11 @@ Hash Table will be custom:
 
  Symbol table will play like a controller, he will use the hashtable and call the necessary functions from the hasthable
  main includes some tests and calls to symbol table
+
+
+ For Lab3:
+
+ The main root is ScannerApp, where i will declare A ScannerREsult and compute the result for a txt.
+ Declaring the ScannerResult will also declare the Scanner itself and SymbolClassifier
+ The Scanner will include the SymbolClassifier and all the conditions that should be checked
+ The SymbolClassifier will separete my tokens
