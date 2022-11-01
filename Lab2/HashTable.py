@@ -10,13 +10,21 @@ class HashTable(object):
     def contains(self, key) -> bool:
         return key in self.array[self.hash(key)]
 
-    def add(self, key):
-        if self.contains(key):
-            return self.get(key)
-        self.array[self.hash(key)].append(key)
-        return self.get(key)
-
-
+    def add(self, key, value):
+        index = self.hash(key)
+        if self.array[index] is not None:
+            for pos in self.array[index]:
+                if pos[0] == key:
+                    # key already exists, update the value
+                    pos[1] = value
+                    break
+            else:
+                # key doesn't exist but index does (there previously was a value there)
+                self.array[index].append([key, value])
+        else:
+            # key and index don't exist
+            self.array[index] = []
+            self.array[index].append([key, value])
 
     def get(self, key):
         list_position = self.hash(key)
@@ -39,6 +47,7 @@ class HashTable(object):
     def __str__(self):
         stringOut = ""
         for pos in self.array:
-            if pos is not None:
+            if pos != None and pos != []:
                 stringOut = stringOut + str(pos)[1:-1]
+                stringOut += "\n"
         return stringOut

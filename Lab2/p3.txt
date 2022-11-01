@@ -1,13 +1,13 @@
 folosibilN _size
-folosibilN _arr[]
+folosibilN _arr [ ]
 folosibil1 _ok => t
 
 create _size
-create _arr[_size]
+create _arr [ _size ]
 
-folosibilN _i, _count => 0, 0
-noStress _i ? 0, _size:
-    notSure => _ok, _arr[_i] ? _ok == t, _arr[_i] % 2 == 0:
+folosibilN _i , _count => 0 , 0
+noStress _i ? 0 , _size :
+    notSure => _ok , _arr [ _i ] ? _ok == t , _arr [ _i ] % 2 == 0 :
         _count ++
 
 ecran => 'there are ' + _count + ' even numbers'

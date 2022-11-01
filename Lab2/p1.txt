@@ -9,9 +9,9 @@ folosibilN _stringOut
 folosibil1 _ok => f
 
 notSure => _sum ? _sum > 0 :
-    _stringOut => concat ('The sum is ' + _sum)
-Sure:
-    _stringOut => concat ('The sum is negative and it is ' + _sum)
+    _stringOut => concat ( 'The sum is ' + _sum )
+Sure :
+    _stringOut => concat ( 'The sum is negative and it is ' + _sum )
 
 
 ecran => _stringOut
