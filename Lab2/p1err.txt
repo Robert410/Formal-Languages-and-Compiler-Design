@@ -1,5 +1,5 @@
-folosibilN _a = 1
-folosibilN _b => _b = 1
+folosibilN a_a = 1
+folosibilN 0b => _b = 1
 
 folosibil1N _sum =>> _a +_b
 

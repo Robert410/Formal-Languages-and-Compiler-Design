@@ -13,6 +13,9 @@ class Scanner:
     def is_constant(self, token) -> bool:
         return match(r'(0|[+-]?[1-9][0-9]*)$|^\'.\'$|^\'.*\'$', token) is not None
 
+    def getAll(self):
+        return self.symbol_classifier.all
+
     def get_string_token_from_line(self, line, index):
         token = ''
         quotes = 0
@@ -61,17 +64,15 @@ class Scanner:
                 if token:
                     tokens.append(token)
                 token, index = self.get_string_token_from_line(line, index)
-                print(token) # is prime')
+                # print(token) # is prime')
                 tokens.append(token)
                 token = ''  # reset token
 
             elif line[index] in self.symbol_classifier.separators:
                 if token:
-                    # print(token) println
                     tokens.append(token)
                 token = line[index]
                 index += 1
-                # print(token) ( ) ;
                 tokens.append(token)
                 token = ''  # reset token
 

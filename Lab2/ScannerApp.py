@@ -15,7 +15,9 @@ class ScannerResult:
         reserved_words = self.scanner.get_reserved_words()
         separators = self.scanner.get_separators()
         operators = self.scanner.get_operators()
+        all = self.scanner.getAll()
 
+        counterST = 0
         with open(file_name, 'r') as file:
             line_counter = 0
             for line in file:
@@ -27,29 +29,30 @@ class ScannerResult:
                     if tokens[i] in reserved_words + separators + operators:
                         if tokens[i] == ' ':  # ignore adding spaces to the pif
                             continue
-                        self.PIF.add(tokens[i], "(" + str(line_counter) + ", " + str(position) + ")")
+                        self.PIF.add(tokens[i], all.index(tokens[i]) + 2)
 
                     elif self.scanner.is_identifier(tokens[i]):
-                        if ((i + 4) < len(tokens) is not None) :
-                            if self.scanner.is_constant(tokens[i+4]):
-                                self.ST.addSymTable(tokens[i], str(tokens[i+4]))
-                            elif self.scanner.is_identifier(tokens[i+4]):
-                                continue
-                            else:
-                                self.ST.addSymTable(tokens[i], "undefined")
+                        id = self.ST.addSymTable(tokens[i])
+                        counterST += 1
+                        aux = list(id)
+                        aux[0] = counterST
+                        id = tuple(aux)
+                        # print("id", id)
+                        self.PIF.add(tokens[i], id)
 
-                        self.PIF.add(tokens[i], "(" + str(line_counter) + ", " + str(position) + ")")
                     elif self.scanner.is_constant(tokens[i]):
-                        self.ST.addSymTable(extra + tokens[i], " -> const variable")
-                        self.PIF.add(tokens[i], "(" + str(line_counter) + ", " + str(position) + ")")
+                        const = self.ST.addSymTable(extra + tokens[i])
+                        counterST += 1
+                        extra = ''
+                        aux = list(const)
+                        aux[0] = counterST
+                        const = tuple(aux)
+                        # print("const", const)
+                        self.PIF.add(tokens[i], const)
                     else:
                         exceptionMessage += 'Lexical error at token ' + tokens[i] + ', at line ' + str(
                             line_counter) + " column: " + str(position) + "\n"
                     position += len(tokens[i])
-                    if i+1 < len(tokens):
-                        if tokens[i+1] != " ":
-                            exceptionMessage += 'Lexical error at line ' + str(
-                                line_counter) + " column: " + str(position) + " (No spacing between elements)\n"
 
 
         with open('st.out', 'w') as writer:

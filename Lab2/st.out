@@ -1,4 +1,5 @@
 SymbolTable:
-['1', ' -> const variable']
-['_a', '1']
-['_b', '1']
+'1'
+'_a'
+'_b'
+'_sum'
