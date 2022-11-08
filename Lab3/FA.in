@@ -1,0 +1,9 @@
+states = p q r
+alphabet = a b
+initial = p
+final = p r
+transitions =
+	(p,a) => p
+	(p,b) => r
+	(q,a) => q
+    (r,b) => q

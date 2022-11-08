@@ -41,7 +41,9 @@ class ScannerResult:
                         self.PIF.add(tokens[i], id)
 
                     elif self.scanner.is_constant(tokens[i]):
+                        print(tokens[i])
                         const = self.ST.addSymTable(extra + tokens[i])
+                        print(const)
                         counterST += 1
                         extra = ''
                         aux = list(const)
@@ -49,6 +51,7 @@ class ScannerResult:
                         const = tuple(aux)
                         # print("const", const)
                         self.PIF.add(tokens[i], const)
+                        # print(tokens[i] + " -> " + str(const))
                     else:
                         exceptionMessage += 'Lexical error at token ' + tokens[i] + ', at line ' + str(
                             line_counter) + " column: " + str(position) + "\n"
@@ -67,9 +70,9 @@ class ScannerResult:
 if __name__ == '__main__':
     scanner_result = ScannerResult()
     # scanner_result.compute_results("p1.txt")
-    scanner_result.compute_results("p1err.txt")
+    # scanner_result.compute_results("p1err.txt")
     # scanner_result.compute_results("p2.txt")
-    # scanner_result.compute_results("p3.txt")
+    scanner_result.compute_results("p3.txt")
 
     # scanner = Scanner()
     # line = "println('hello world');"

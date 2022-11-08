@@ -1,5 +1,7 @@
 SymbolTable:
-'1'
-'_a'
-'_b'
-'_sum'
+'_arr', '_i'
+'_count', '0'
+'2', "'there are '"
+'_ok'
+"' even numbers'"
+'_size'
