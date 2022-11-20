@@ -6,4 +6,4 @@ transitions =
 	(p,a) => p
 	(p,b) => r
 	(q,a) => q
-    (r,b) => q
+(r,b) => q

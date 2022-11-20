@@ -40,7 +40,7 @@ class Console:
         exit = False
         while not exit:
             self.__displayMenu()
-            print(">>")
+            print(">>", end=" ")
             command = input()
             if command in commands.keys():
                 commands[command]()
